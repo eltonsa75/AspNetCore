@@ -1,0 +1,22 @@
+@model Aula6.Models.Product
+
+<form asp-controller="Product" asp-action="Save" method="post">
+Id:
+<input asp-for="Id" />
+<span asp-validation-for="Id"></span>
+<br>
+Name:
+<input asp-for"Name />
+<span asp-validation-for="Name"></span>
+<br>
+Preço:
+<input asp-for"Price" />
+<span asp-validation-for="Price"></span>
+<br>
+<button type="submit">Salvar</button>
+</form>
+
+@if(ViewBag.Validacao != null)
+{
+    <span>@ViewBag.Validacao</span>
+}
