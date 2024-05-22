@@ -21,6 +21,15 @@ namespace Mvc.Controllers
        _context = context;
     }
 
+     [HttpGet]
+        public IActionResult Index() 
+        {
+
+            var categorias = _context.Categorias.ToList();
+
+            return View(categorias);
+        }
+
         [HttpGet]
         public IActionResult Salvar() {
 
@@ -32,7 +41,7 @@ namespace Mvc.Controllers
 
             _context.Categorias.Add(categoria);
             await _context.SaveChangesAsync();
-            return View();
+            return RedirectToAction("Index");
         }
     }
 }
