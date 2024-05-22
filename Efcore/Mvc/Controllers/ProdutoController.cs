@@ -20,6 +20,13 @@ namespace Mvc.Controllers
             _context = context;
          } 
 
+         public IActionResult Index() {
+
+            var produtos = _context.Produtos.ToList();
+
+            return View(produtos);
+         }
+
         [HttpGet]
         public IActionResult Salvar() 
         {
