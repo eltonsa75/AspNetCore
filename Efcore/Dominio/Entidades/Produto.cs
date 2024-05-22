@@ -11,5 +11,7 @@ namespace Dominio.Entidades
             public string Nome { get; set; }
 
           public Categoria Categoria {get; set;}
+
+          public int CategoriaId {get; set;}
     }
 }
