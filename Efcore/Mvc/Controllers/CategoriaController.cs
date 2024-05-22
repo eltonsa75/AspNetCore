@@ -7,6 +7,7 @@ using Dados;
 using Dominio.Entidades;
 using Microsoft.AspNetCore.Identity.UI.Pages.Internal.Account;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Scaffolding;
 using Microsoft.Extensions.Logging;
 
 namespace Mvc.Controllers
@@ -30,6 +31,20 @@ namespace Mvc.Controllers
             return View(categorias);
         }
 
+        public IActionResult Editar(int id) 
+        {
+             var categoria = _context.Categorias.First(c => c.Id == id);
+            return View("Salvar", categoria);
+        }
+        public async Task<IActionResult> Deletar(int id) 
+        {
+             var categoria = _context.Categorias.First(c => c.Id == id);
+             _context.Categorias.Remove(categoria);
+             await _context.SaveChangesAsync();
+
+             return RedirectToAction("Index");
+        }
+
         [HttpGet]
         public IActionResult Salvar() {
 
@@ -37,9 +52,14 @@ namespace Mvc.Controllers
         }
 
     [HttpPost]
-          public async Task<IActionResult> Salvar(Categoria categoria) {
+          public async Task<IActionResult> Salvar(Categoria modelo) {
 
-            _context.Categorias.Add(categoria);
+            if(modelo.Id == 0) 
+            _context.Categorias.Add(modelo);
+            else{
+                var categoriaSalva = _context.Categorias.First(c => c.Id == modelo.Id);
+                categoriaSalva.Nome = modelo.Nome;
+            }            
             await _context.SaveChangesAsync();
             return RedirectToAction("Index");
         }
