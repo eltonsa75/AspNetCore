@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Dados;
 using Dominio.Entidades;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 
 namespace Mvc.Controllers
@@ -22,7 +23,7 @@ namespace Mvc.Controllers
 
          public IActionResult Index() {
 
-            var produtos = _context.Produtos.ToList();
+            var produtos = _context.Produtos.Include(p => p.Categoria).ToList();
 
             return View(produtos);
          }
@@ -34,13 +35,28 @@ namespace Mvc.Controllers
             return View();
         }
 
+          public IActionResult Editar(int id) 
+        {
+             var produto = _context.Produtos.First(c => c.Id == id);
+            return View("Salvar", produto);
+        }
+
+         public async Task<IActionResult> Deletar(int id) 
+        {
+             var produto = _context.Produtos.First(c => c.Id == id);
+             _context.Produtos.Remove(produto);
+             await _context.SaveChangesAsync();
+
+             return RedirectToAction("Index");
+        }
+
         [HttpPost]
         public async Task<IActionResult> Salvar(Produto modelo)
         {
             
             _context.Produtos.Add(modelo);
             await _context.SaveChangesAsync();
-            return View();
+            return RedirectToAction("Index");
         }      
     }
 }
