@@ -23,7 +23,7 @@ namespace Mvc.Controllers
 
          public IActionResult Index() {
 
-            var produtos = _context.Produtos.Include(p => p.Categoria).ToList();
+            var produtos = _context.Produtos.ToList();
 
             return View(produtos);
          }
