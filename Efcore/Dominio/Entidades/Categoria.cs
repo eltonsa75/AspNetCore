@@ -12,5 +12,7 @@ namespace Dominio.Entidades
 
         public string Nome { get; set; }
 
+        public bool PermiteEstoque {get; set;}
+
     }
 }

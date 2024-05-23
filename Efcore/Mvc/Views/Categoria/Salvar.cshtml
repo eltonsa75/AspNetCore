@@ -1,20 +1,26 @@
 ﻿@model Dominio.Entidades.Categoria
 
-<h2> Formulário de Categoria</h2>
+<h2>Formulário de Categoria</h2>
 
 <form class="form-horizontal" asp-action="Salvar" asp-controller="Categoria" method="POST">
 
     <input type="hidden" class="form-control" asp-for="Id">
-<div class="form-group">
-    <label class="col-md-md-1 control-label" for="Name">Nome</label>
-    <div class="col-md-2">
+    <div class="form-group">
+        <label class="col-md-1 control-label" for="Name">Nome</label>
+        <div class="col-md-2">
         <input type="text" class="form-control" asp-for="Nome">
-    </div>
+        </div>
     </div>
     <div class="form-group">
-    <div class="col-md-2">
-        <button class="btn btn-success">Salvar</button>
+        <label class="col-md-1 control-label" for="Name">Estoque</label>
+        <div class="col-md-2">
+        <input type="checkbox" asp-for="PermiteEstoque">
+        </div>
     </div>
-</div>
+    <div class="form-group">
+        <div class="col-md-2">
+            <button class="btn btn-success">Salvar</button>
+        </div>
+    </div>
 
 </form>

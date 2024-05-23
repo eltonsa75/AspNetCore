@@ -11,6 +11,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Mvc.Controllers
 {
+
+    //https://github.com/StphanyBatista/EntityFrameworkCurso
       public class ProdutoController : Controller
     {  
 
@@ -23,9 +25,12 @@ namespace Mvc.Controllers
 
          public IActionResult Index() {
 
-            var produtos = _context.Produtos.ToList();
+            var queryDeProduto = _context.Produtos.Where(p => p.Ativo && p.Categoria.PermiteEstoque).OrderBy(p => p.Nome);
 
-            return View(produtos);
+            if(!queryDeProduto.Any())
+            return View(new List<Produto>());
+
+            return View(queryDeProduto.ToList());
          }
 
         [HttpGet]
