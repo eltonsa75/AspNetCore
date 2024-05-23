@@ -18,6 +18,11 @@ AZURE DATA STUDIO
 
 <img src="azure.png" alt="Azure data Studio" width="500">
 
+IDENTITY
+
+<img src="identity.png" alt="Azure data Studio" width="500">
+
+
 **Fonte: Stephany Henrique de Almeida Batista / ASP.NET Core: Aprendendo do zero ao avançado*
 
 <div align="center">
@@ -34,6 +39,7 @@ AZURE DATA STUDIO
 
 ![C#](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white)
 ![EF Core](https://img.shields.io/badge/EF%20Core-512BD4?style=for-the-badge&logo=.net&logoColor=white)
+![Identity](https://img.shields.io/badge/Identity-4B0082?style=for-the-badge&logo=microsoft&logoColor=white)
 ![Azure Data Studio](https://img.shields.io/badge/Azure%20Data%20Studio-0078D4?style=for-the-badge&logo=azuredatastudio&logoColor=white)
 ![ASP.NET Core](https://img.shields.io/badge/ASP.NET%20Core-512BD4?style=for-the-badge&logo=.net&logoColor=white)
  [![GitHub](https://img.shields.io/badge/GitHub-000?style=for-the-badge&logo=github&logoColor=f8f9fa)](https://docs.github.com/)
