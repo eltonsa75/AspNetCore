@@ -9,7 +9,7 @@ namespace StoreOfBuild.Domain.Products
     {
         private readonly IRepository<Category> _categoryRepository;
 
-        public CategoryStorer(IRepository<Categor> categoryRepository)
+        public CategoryStorer(IRepository<Category> categoryRepository)
         {
             _categoryRepository = categoryRepository;
         }

@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Products.DomainException;
+
 
 namespace StoreOfBuild.Domain.Products
 {
@@ -14,6 +14,8 @@ namespace StoreOfBuild.Domain.Products
 
         public decimal Price {get; private set;}
         public int stockQuantity {get; private set; }
+
+        
         public Product(string name, Category category, decimal price, int stockQuantity)
         {
 
@@ -21,7 +23,7 @@ namespace StoreOfBuild.Domain.Products
             SetProperties(name, category, price, stockQuantity);
 
         }
-        public Update(string name, Category category, decimal price, int stockQuantity)
+        public void Update(string name, Category category, decimal price, int stockQuantity)
         {
             ValidateValues(name, category, price, stockQuantity);
             SetProperties(name, category, price, stockQuantity);
@@ -29,10 +31,10 @@ namespace StoreOfBuild.Domain.Products
         }
         public void SetProperties(string name, Category category, decimal price, int stockQuantity)
         {
-            name = name;
-            category = category;
-            price = price;
-            stockQuantity = stockQuantity;
+            Name = name;
+            Category = category;
+            Price = price;
+            StockQuantity = stockQuantity;
         }
         private void ValidateValues(string name, Category category, decimal price, int stockQuantity)
         {
