@@ -7,28 +7,18 @@ namespace StoreOfBuild.Domain.Products
 {
     public class CategoryStorer
     {
-
         private readonly IRepository<Category> _categoryRepository;
-        public CategoryStorer(IRepository<Category> _categoryRepository);
 
-        public CategoryStorer(IRepository<Category> _categoryRepository)
+        public CategoryStorer(IRepository<Categor> categoryRepository)
         {
-            _categoryRepository = _categoryRepository;
+            _categoryRepository = categoryRepository;
         }
 
-        public void Store(CategoryDto dto) 
+        public void Store(CategoryDto dto)
         {
             var category = _categoryRepository.GetById(dto.Id);
-
-            if(category == null) 
-            {
-                category = new CategoryStorer(dto.Name);
-                _categoryRepository.Save(category);
-            }
-            else 
-            {
-                category.Update(dto.Name);
-            }
         }
+        else 
+        category.Update(dto.Name);
     }
 }

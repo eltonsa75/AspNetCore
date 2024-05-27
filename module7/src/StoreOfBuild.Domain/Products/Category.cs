@@ -7,23 +7,24 @@ namespace StoreOfBuild.Domain.Products
 {
     public class Category
     {
-            public int Id { get; private set; }
-            public string Name { get; private set; }
+        public int Id {get; private set;}
 
-            public Category(string Name) 
-            {
-               ValidateNameAndsetName(name);
-            }
-            public void Update(string name)
-            {
-                 ValidateNameAndsetName(name);
-            }
-            public void ValidateNameAndsetName(string Name) 
-            {
-                DomainException.when(string.IsNullOrEmpty(name), "Name is required");
+        public string Name { get; private set; }
 
-                Name = name;
-            }
+        public Category(string name)
+        {
+            ValidateNameandsetName(name)          
+        }
+        public void Update(string name) 
+        {
+            ValidateNameandsetName(name)  
+        }
+        public void ValidateNameandsetName(string name)
+        {
+
+            DomainException.When(string.IsNullOrEmpty(name), "Name is required");
+            Name = name;
+        }
 
     }
 }
