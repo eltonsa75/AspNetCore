@@ -7,6 +7,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E7522E46-F48
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoreOfBuild.Domain", "src\StoreOfBuild.Domain\StoreOfBuild.Domain.csproj", "{B6E1FD35-12F4-47AF-BC6D-068B9458E4DD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoreOfBuild.Data", "src\StoreOfBuild.Data\StoreOfBuild.Data.csproj", "{D0B04D2A-8FFD-4082-82FA-58357C5B7834}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,8 +22,13 @@ Global
 		{B6E1FD35-12F4-47AF-BC6D-068B9458E4DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B6E1FD35-12F4-47AF-BC6D-068B9458E4DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B6E1FD35-12F4-47AF-BC6D-068B9458E4DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0B04D2A-8FFD-4082-82FA-58357C5B7834}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0B04D2A-8FFD-4082-82FA-58357C5B7834}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0B04D2A-8FFD-4082-82FA-58357C5B7834}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0B04D2A-8FFD-4082-82FA-58357C5B7834}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{B6E1FD35-12F4-47AF-BC6D-068B9458E4DD} = {E7522E46-F487-4CD3-B224-11E3A46E063D}
+		{D0B04D2A-8FFD-4082-82FA-58357C5B7834} = {E7522E46-F487-4CD3-B224-11E3A46E063D}
 	EndGlobalSection
 EndGlobal
