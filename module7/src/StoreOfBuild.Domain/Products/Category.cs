@@ -13,11 +13,11 @@ namespace StoreOfBuild.Domain.Products
 
         public Category(string name)
         {
-            ValidateNameandsetName(name)          
+            ValidateNameandsetName(name) ;         
         }
         public void Update(string name) 
         {
-            ValidateNameandsetName(name)  
+            ValidateNameandsetName(name) ; 
         }
         public void ValidateNameandsetName(string name)
         {
